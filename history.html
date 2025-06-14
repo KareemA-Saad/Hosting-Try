@@ -24,6 +24,10 @@
   <link rel="stylesheet" href="./css/history.css">
 
   <!-- Firebase CDN scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
   <!-- End Firebase CDN scripts -->
 </head>
 
@@ -60,7 +64,11 @@
       </div>
       <div class="user-container">
         <a href="loginForm.html" id="user-link">
-          <i class="fas fa-user-circle user-icon-z" id="user-icon"></i>
+          <span id="user-icon-container">
+            <i class="fas fa-user-circle user-icon-z" id="user-icon-default"></i>
+            <img id="user-icon-img" class="user-icon-z" src="img/default-user-icon.png" alt="User Icon"
+              style="display:none; width:32px; height:32px; border-radius:50%; object-fit:cover;" />
+          </span>
           <span id="login-text">Log in</span>
         </a>
         <div class="user-menu">
