@@ -89,7 +89,7 @@ const handleGoogleAuth = async (isSignUp = false) => {
 // Auth State Change
 onAuthStateChanged(auth, (user) => {
     if (!user && window.location.pathname.includes('user.html')) {
-        window.location.href = './auth/loginForm.html';
+        window.location.href = './loginForm.html';
     }
 });
 

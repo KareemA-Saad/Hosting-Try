@@ -30,7 +30,7 @@ onAuthStateChanged(auth, async (user) => {
             userEmailInput.value = user.email.toLowerCase();
         }
     } else {
-        window.location.href = "auth/loginForm.html";
+        window.location.href = "loginForm.html";
     }
 });
 

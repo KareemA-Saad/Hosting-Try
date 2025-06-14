@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
             initPayPal(db, userId);
         })
         .catch(() => {
-            window.location.href = "./../auth/loginForm.html";
+            window.location.href = "./../loginForm.html";
         });
 });
 

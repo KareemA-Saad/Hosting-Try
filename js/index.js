@@ -74,7 +74,7 @@ onAuthStateChanged(auth, (user) => {
         userIconImg.style.display = 'none';
         userIconDefault.style.display = 'inline-block';
         loginText.textContent = "Log in";
-        userLink.href = "auth/loginForm.html";
+        userLink.href = "loginForm.html";
         if (logoutBtn) logoutBtn.style.display = 'none';
     }
 });

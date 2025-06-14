@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/signupForm.css">
+    <link rel="stylesheet" href="css/signupForm.css">
     <!-- Firebase CDN scripts -->
     <!-- End Firebase CDN scripts -->
 </head>
@@ -51,13 +51,13 @@
             <div class="social-row-k">
                 <!-- Google signup button -->
                 <button type="button" id="google-signup" class="social-btn-k google-btn-k" title="Sign up with Google">
-                    <img src="../img/google-icon.svg" alt="Google" />
+                    <img src="img/google-icon.svg" alt="Google" />
                 </button>
             </div>
         </form>
     </div>
 
-    <script src="../js/auth.js"></script>
+    <script type="module" src="js/auth.js"></script>
     <script>
         if (typeof initSignupForm === 'function') {
             initSignupForm();

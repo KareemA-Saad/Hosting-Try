@@ -12,7 +12,9 @@ export default defineConfig({
                 dashboard: './dashboard.html',
                 history: './history.html',
                 productDetails: './productDetails.html',
-                user: './user.html'
+                user: './user.html',
+                loginForm: './loginForm.html',
+                signupForm: './signupForm.html'
             }
         }
     },

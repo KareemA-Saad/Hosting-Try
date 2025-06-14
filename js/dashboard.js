@@ -22,12 +22,12 @@ document.body.appendChild(signoutBtn);
 
 signoutBtn.addEventListener('click', async () => {
   await signOut(auth);
-  window.location.href = 'auth/loginForm.html';
+  window.location.href = 'loginForm.html';
 });
 
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
-    window.location.href = "auth/loginForm.html";
+    window.location.href = "loginForm.html";
     return;
   }
   let userData = await userDataService.getUserData(user.uid);
