@@ -1,7 +1,6 @@
 import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
 import { db, auth } from "./firebase-config.js";
-
-const onAuthStateChanged = auth.onAuthStateChanged.bind(auth);
+import { onAuthStateChanged } from "firebase/auth";
 
 function updateCartCount() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -131,7 +130,6 @@ async function removeItemFromFirestoreAndLocal(docId, itemId, itemColor, userId)
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-
   onAuthStateChanged(auth, () => {
     displayCartItems();
   });

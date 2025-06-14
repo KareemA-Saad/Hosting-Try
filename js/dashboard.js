@@ -1,21 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import {getFirestore,collection,getDocs,addDoc,deleteDoc,doc,updateDoc} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-import { auth } from './firebase-config.js';
+import { db, auth } from './firebase-config.js';
+import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { userDataService } from './userDataService.js';
 
-let firebaseConfig = {
-  apiKey: "AIzaSyDOL8EAF_5kYHAom1fZ_7UiAxWcWIJ5Aok",
-  authDomain: "pack-go-5d568.firebaseapp.com",
-  projectId: "pack-go-5d568",
-  storageBucket: "pack-go-5d568.firebasestorage.app",
-  messagingSenderId: "525870091383",
-  appId: "1:525870091383:web:06655ed6e02bcf40e28a72",
-  measurementId: "G-R9DE3EBPD2"
-};
-
-let app = initializeApp(firebaseConfig);
-let db = getFirestore(app);
 let productsRef = collection(db, "productsData");
 
 let form = document.querySelector("#productForm");

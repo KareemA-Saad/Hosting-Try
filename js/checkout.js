@@ -1,9 +1,8 @@
 import { collection, getDocs, deleteDoc, doc, updateDoc, query, where } from "firebase/firestore";
 import { db, auth } from "./firebase-config.js";
 import { updateCartCount } from "./cart-item.js";
+import { onAuthStateChanged } from "firebase/auth";
 let currentUserId = null;
-
-const onAuthStateChanged = auth.onAuthStateChanged.bind(auth);
 
 async function removeItemFromFirestoreAndLocal(docId, id, color, userId) {
   try {
