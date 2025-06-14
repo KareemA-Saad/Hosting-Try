@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../css/signupForm.css">
+</head>
+
+<body>
+    <!-- Centering container for the signup form -->
+    <div class="signup-k">
+        <!-- Signup form card -->
+        <form class="signup-card-k" id="signup-form">
+            <h1>Sign Up</h1>
+            <!-- Link to Log In page -->
+            <div class="subtext-k">Already a member? <a href="loginForm.html">Log In</a></div>
+
+            <!-- Email input field -->
+            <label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </label>
+
+            <!-- Display Name input field -->
+            <input type="text" id="display-name" class="display-name-input" placeholder="Enter your username" required>
+
+            <!-- Password input field -->
+            <label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </label>
+
+            <!-- Confirm Password input field -->
+            <label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+            </label>
+
+
+
+            <!-- Signup button -->
+            <button type="submit" class="signup-btn-k">Sign Up</button>
+
+            <!-- Divider with text -->
+            <div class="divider-k">
+                <span></span>
+                <div>or sign up with</div>
+                <span></span>
+            </div>
+            <!-- Social signup buttons row -->
+            <div class="social-row-k">
+                <!-- Google signup button -->
+                <button type="button" id="google-signup" class="social-btn-k google-btn-k" title="Sign up with Google">
+                    <img src="https://www.svgrepo.com/download/475656/google-color.svg" alt="Google" />
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script type="module">
+        import { initSignupForm } from '../js/auth.js';
+        initSignupForm();
+    </script>
+</body>
+
+</html>

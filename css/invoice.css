@@ -1,0 +1,161 @@
+.invoice-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.invoice-card {
+    background: #ffffff;
+    color: #222;
+    font-size: 16px;
+    padding: 40px;
+    border-radius: 20px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeInScale 0.3s ease-in-out;
+}
+
+.invoice-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #222;
+}
+
+.invoice-card p {
+    font-size: 18px;
+    margin: 12px 0;
+    color: #444;
+}
+
+#invProductsList {
+    margin-top: 20px;
+}
+
+#invProductsList h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#invProductsList ul {
+    padding-left: 20px;
+    color: #555;
+    font-size: 16px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.print-btn,
+.close-btn {
+    background: #3b82f6;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.close-btn {
+    background: #ef4444;
+}
+
+.print-btn:hover {
+    background: #2563eb;
+}
+
+.close-btn:hover {
+    background: #dc2626;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f3f4f6;
+}
+
+td {
+    background-color: #f9fafb;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #invoiceContent,
+    #invoiceContent * {
+        visibility: visible;
+    }
+
+    #invoiceContent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #invoiceContent,
+    #invoiceContent * {
+        visibility: visible;
+    }
+
+    #invoiceContent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}

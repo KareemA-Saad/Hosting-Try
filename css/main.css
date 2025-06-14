@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding: 9rem;
+}
+
+html::-webkit-scrollbar {
+    width: .9rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #eee6e6;
+    border-radius: 5px;
+}
+
+body {
+    background-color: #020202;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: none;
+}
+
+img {
+    cursor: pointer;
+    width: 100%;
+}
+
+:root {
+    /* Colors */
+    --main-color: #020202;
+    --white-color: #fff;
+    --dark-color: #111;
+    --light-grey-color: #eee6e6;
+    --dark-grey-color:#a29c9c;
+    --secondary-color:#3a3232;
+
+}

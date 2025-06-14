@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../css/loginForm.css">
+</head>
+
+<body>
+    <!-- Centering container for the login form -->
+    <div class="login-k">
+        <!-- Login form card -->
+        <form class="login-card-k" id="login-form">
+            <h1>Log In</h1>
+            <!-- Link to Sign Up page -->
+            <div class="subtext-k">New to this site? <a href="signupForm.html">Sign Up</a></div>
+            <!-- Email input field -->
+            <label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </label>
+            <!-- Password input field -->
+            <label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </label>
+            <!-- Forgot password link -->
+            <div class="forgot-row-k">
+                <a href="#" class="forgot-link-k">Forgot password?</a>
+            </div>
+            <!-- Login button -->
+            <button type="submit" class="login-btn-k">Log In</button>
+            <!-- Divider with text -->
+            <div class="divider-k">
+                <span></span>
+                <div>or log in with</div>
+                <span></span>
+            </div>
+            <!-- Social login buttons row -->
+            <div class="social-row-k">
+                <!-- Google login button -->
+                <button type="button" id="google-signin" class="social-btn-k google-btn-k" title="Log in with Google">
+                    <img src="https://www.svgrepo.com/download/475656/google-color.svg" alt="Google" />
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script type="module">
+        import { initLoginForm } from '../js/auth.js';
+        initLoginForm();
+    </script>
+</body>
+
+</html>

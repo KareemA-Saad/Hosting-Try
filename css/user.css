@@ -1,0 +1,120 @@
+.user-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: #181818;
+    margin-top: 50px;
+}
+
+.user-info-card {
+    background: #222;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    text-align: center;
+    color: #fff;
+    min-width: 320px;
+}
+
+.user-info-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 2px solid #6c63ff;
+}
+
+.user-info-card h2 {
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.user-info-card form {
+    margin-bottom: 18px;
+}
+
+.user-info-card label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.user-info-card input {
+    width: 90%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    margin-bottom: 10px;
+    background: #181818;
+    color: #fff;
+}
+
+.user-info-card button {
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.user-info-card button:hover {
+    background: #5548c8;
+}
+
+#user-message {
+    margin-top: 10px;
+    color: #6c63ff;
+    font-weight: 600;
+}
+
+input[type="email"] {
+  text-transform: none;
+}
+
+
+@media (max-width: 600px) {
+    .user-main {
+        min-height: 100vh;
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .user-info-card {
+        min-width: unset;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .user-info-card img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 12px;
+    }
+
+    .user-info-card h2 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+
+    .user-info-card input {
+        width: 100%;
+        font-size: 1em;
+        padding: 7px;
+    }
+
+    .user-info-card button {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1em;
+    }
+}

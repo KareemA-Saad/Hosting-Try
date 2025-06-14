@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pack-Go | Shop Now</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/shop.css">
+  <link rel="stylesheet" href="./css/cart-item.css">
+  <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+
+  <header class="header-z">
+    <a href="">
+      <h2 class="logo-z">P<span>ACK </span>& G<span>O</span></h2>
+    </a>
+    <div class="right-z navbar">
+      <a href="./index.html">Home</a>
+      <a href="./shop.html">Shop</a>
+      <a href="index.html#sale">Sale</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <!--  <a href="auth/loginForm.html" id="user-link">
+           <img id="user-icon" src="img/default-user-icon.png" alt="User Icon" class="user-icon-z" />
+            <span id="login-text">Log in</span>
+          </a> -->
+    </div>
+    <div class="icons-z">
+      <div class="fas fa-shopping-cart icon-z" style="color: white; position: relative;">
+        <span id="cart-count" style="
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          background: red;
+          color: white;
+          font-size: 12px;
+          padding: 2px 6px;
+          border-radius: 50%;
+        ">0</span>
+      </div>
+      <div class="user-container">
+        <a href="auth/loginForm.html" id="user-link">
+          <span id="user-icon-container">
+            <i class="fas fa-user-circle user-icon-z" id="user-icon-default"></i>
+            <img id="user-icon-img" class="user-icon-z" src="img/default-user-icon.png" alt="User Icon"
+              style="display:none; width:32px; height:32px; border-radius:50%; object-fit:cover;" />
+          </span>
+          <span id="login-text">Log in</span>
+        </a>
+        <div class="user-menu">
+          <ul>
+            <li><a href="user.html">User Profile</a></li>
+            <li><a href="history.html">Order History</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" id="logout-btn" style="display:none;color:rgb(253, 83, 83); font-size: 20px;"><i
+          class="fas fa-sign-out-alt"></i></a>
+      <div class="icon-z fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    </div>
+
+    <div class="search-form">
+      <input type="search" placeholder="search here ..." id="search-box" />
+      <label for="search-box" class="fas fa-search"></label>
+    </div>
+    <div class="cart-item-container">
+
+    </div>
+
+
+  </header>
+  <div class="social-z">
+    <i style="color: #1877F2;" class="fab fa-facebook"></i>
+    <i style="color: #E1306C;" class="fab fa-instagram"></i>
+    <i style="color: #FF0000;" class="fab fa-youtube"></i>
+  </div>
+  <span id="error-load"></span>
+
+  <div class="browse-section-m">
+    <div class="breadcrumb-m">
+      <a href="./index.html">Home</a> > <a href="#" id="category-selected"></a>
+    </div>
+    <div class="product-count-sort-m">
+      <div class="sort-by-m">
+        <span>Sort by:</span>
+        <select id="sort">
+          <option value="0">Title: A - Z </option>
+          <option value="1">Title: Z - A </option>
+          <option value="2">Price: Low to High</option>
+          <option value="3">Price: High to Low</option>
+        </select>
+        <div class="search-product">
+          <button id="searchToggle" class="search-icon-btn" aria-label="Search">
+            <span for="search-box" class="fas fa-search"></span>
+          </button>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search..." />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="shop-m">
+    <div class="sidebar-m">
+      <h3>Browse by</h3>
+      <ul id="filter">
+        <li><a href="#" class="active" data-category="all">All Products</a></li>
+        <li><a href="#" data-category="backpacks">Back-packs</a></li>
+        <li><a href="#" data-category="dufflebags">duffle-Bags</a></li>
+        <li><a href="#" data-category="travelpacks">Travel-Packs</a></li>
+      </ul>
+    </div>
+    <div class="shop-container-m" id="shop-body-B"></div>
+  </section>
+
+  <footer>
+    <div class="f-z">
+      <p>© 2025 by PACK & GO.</p>
+      <div class="links-z">
+        <i style="color: #1877F2;" class="fab fa-facebook"></i>
+        <i style="color: #E1306C;" class="fab fa-instagram"></i>
+        <i style="color: #FF0000;" class="fab fa-youtube"></i>
+      </div>
+  </footer>
+
+  <script src="./js/header.js"></script>
+  <script type="module" src="js/index.js"></script>
+  <script type="module" src="./js/cart-item.js"></script>
+  <script type="module" src="./js/shop.js"></script>
+  <script type="module" src="./js/sortInShop.js"></script>
+  <script type="module" src="./js/filtershop.js"></script>
+  <script type="module" src="./js/search.js"></script>
+  <script type="module" src="./js/getProductDetails.js"></script>
+</body>
+
+</html>

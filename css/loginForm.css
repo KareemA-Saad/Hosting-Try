@@ -1,0 +1,230 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Oswald', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+
+.login-k {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.login-card-k {
+    background: #181818;
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    width: 400px;
+    max-width: 95vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 36px 32px 24px 32px;
+    opacity: 0;
+    transform: translateY(100vh);
+    animation: slideUpCenter 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.login-card-k h1 {
+    font-size: 2.1em;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 18px 0;
+    letter-spacing: 0.5px;
+}
+
+.subtext-k {
+    color: #eee;
+    font-weight: 400;
+    font-size: 1.07rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtext-k a {
+    color: #79afff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.login-card-k label {
+    color: #ddd;
+    display: block;
+    margin: 10px 0 8px 0;
+    font-size: 1.04rem;
+    letter-spacing: 1px;
+}
+
+.login-card-k input[type="email"],
+.login-card-k input[type="password"] {
+    width: 100%;
+    font-size: 1.12rem;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #484848;
+    padding: 10px 3px 7px 3px;
+    margin-bottom: 3px;
+    outline: none;
+    font-family: 'Oswald', Arial, sans-serif;
+    transition: border-bottom-color 0.3s;
+}
+
+.login-card-k input[type="email"]:focus,
+.login-card-k input[type="password"]:focus {
+    border-bottom: 2px solid #79afff;
+}
+
+.forgot-row-k {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+}
+
+.forgot-link-k {
+    color: #79afff;
+    text-decoration: underline;
+    font-size: 0.98em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.18s;
+}
+
+.forgot-link-k:hover {
+    color: #357ab8;
+}
+
+.login-btn-k {
+    margin: 16px 0 6px 0;
+    width: 100%;
+    padding: 13px 0 12px 0;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1.13rem;
+    font-weight: 600;
+    background: #fff;
+    color: #222831;
+    cursor: pointer;
+    box-shadow: 0 1.3px 0.5px rgba(0, 0, 0, 0.07);
+    transition: background 0.18s, color 0.18s;
+}
+
+.login-btn-k:hover {
+    background: #423f3f;
+    color: #dddedf;
+}
+
+.divider-k {
+    display: flex;
+    align-items: center;
+    color: #bdbdbd;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 22px 0 10px 0;
+    gap: 11px;
+}
+
+.divider-k span {
+    flex: 1;
+    border-bottom: 1px solid #515151;
+    height: 0;
+    min-width: 25px;
+}
+
+.social-row-k {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    margin: 8px 0 18px 0;
+}
+
+.social-btn-k {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: box-shadow 0.18s;
+    padding: 0;
+}
+
+.social-btn-k:hover {
+    box-shadow: 0 2px 16px 1px #3a80e9;
+}
+
+.social-btn-k img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* --- Animation --- */
+@keyframes slideUpCenter {
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+
+    
+    .login-card-k {
+        padding: 18px 4vw 12px 4vw;
+        width: 100%;
+       
+        min-width: 0;
+    }
+
+    .login-card-k h1 {
+        font-size: 1.3em;
+    }
+
+    .login-btn-k {
+        font-size: 1em;
+        padding: 0.7em;
+    }
+
+    .divider-k {
+        font-size: 0.95rem;
+        margin: 16px 0 8px 0;
+    }
+
+    .social-btn-k {
+        width: 34px;
+        height: 34px;
+    }
+
+    .social-btn-k img {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pack-Go - Product Details</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/ProductSC.css">
+    <link rel="stylesheet" href="./css/cart-item.css">
+</head>
+
+<body>
+  <header class="header-z">
+    <a href=""><h2  class="logo-z">P<span>ACK </span>& G<span>O</span></h2></a>
+    <div class="right-z navbar">
+      <a href="./index.html">Home</a>
+      <a href="./shop.html">Shop</a>
+      <a href="index.html#sale">Sale</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+
+    </div>
+    <div class="icons-z">
+      <div class="fas fa-shopping-cart icon-z" style="color: white; position: relative;">
+      <span id="cart-count" style="
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: red;
+        color: white;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 50%;
+      ">0</span>
+</div>
+      <a href="auth/loginForm.html" id="user-link" class="">
+       <i class="fas fa-user-circle user-icon-z" id="user-icon" ></i>
+        <span id="login-text">Log in</span>
+      </a>
+      <a href="#" id="logout-btn" style="display:none;color:rgb(253, 83, 83); font-size: 20px;"><i class="fas fa-sign-out-alt"></i></a>
+      <div class="icon-z fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    </div>
+
+    <div class="search-form">
+      <input type="search" placeholder="search here ..." id="search-box" />
+      <label for="search-box" class="fas fa-search"></label>
+    </div>
+    <div class="cart-item-container">
+      
+    </div>
+    
+    
+  </header>
+<div class="social-z">
+        <i style="color: #1877F2;" class="fab fa-facebook"></i>
+        <i style="color: #E1306C;" class="fab fa-instagram"></i>
+        <i style="color: #FF0000;" class="fab fa-youtube"></i>
+  </div>
+    <main id="product-details-container" class="product-details-container"></main>
+
+    <footer>
+    <div class="f-z">
+      <p>© 2025 by PACK & GO.</p>
+      <div class="links-z">
+        <i style="color: #1877F2;" class="fab fa-facebook"></i>
+        <i style="color: #E1306C;" class="fab fa-instagram"></i>
+        <i style="color: #FF0000;" class="fab fa-youtube"></i>
+      </div>
+    </footer>
+
+      <script src="./js/header.js"></script>
+    <script type="module" src="./js/getProductDetails.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <!-- <script type="module" src="./js/cart-item.js"></script> -->
+    
+  </body>
+
+</html>

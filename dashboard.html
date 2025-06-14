@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Dashboard</title>
+  <link rel="stylesheet" href="./css/dashboard.css" />
+</head>
+<body>
+  <h1>Product Dashboard</h1>
+
+  <button id="toggleFormBtn"> Add New Product</button>
+
+  <form id="productForm" class="hidden">
+    <input type="number" name="code" placeholder="Code" required />
+    <input type="text" name="title" placeholder="Title" required />
+    <textarea name="description" placeholder="Description"></textarea>
+    <select name="category" required>
+      <option value="" disabled selected hidden>Choose category</option>
+      <option value="backpacks">Backpacks</option>
+      <option value="dufflebags">Dufflebags</option>
+      <option value="travelpacks">Travelpacks</option>
+    </select>
+    <input type="number" name="price" placeholder="Price" step="0.01" required />
+    <input type="number" name="discountPercentage" placeholder="Discount %" step="0.01" required />
+    <input type="number" name="quantity" placeholder="Quantity" required />
+    <input type="text" name="returnPolicy" placeholder="Return Policy" />
+    <input type="text" name="color" placeholder="Color Name" />
+    <input type="text" name="colorHEX" placeholder="Color HEX" />
+    <input type="text" name="image" placeholder="Image URL" />
+    <input type="text" name="info" placeholder="Additional Info" />
+    <button type="submit">Save Product</button>
+  </form>
+
+
+<table id="productsTable">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Color</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="productList">
+  </tbody>
+</table>
+
+  <div id="productList" class="productList"></div>
+
+  <script type="module" src="./js/dashboard.js"></script>
+</body>
+</html>
