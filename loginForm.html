@@ -43,19 +43,15 @@
             <div class="social-row-k">
                 <!-- Google login button -->
                 <button type="button" id="google-signin" class="social-btn-k google-btn-k" title="Log in with Google">
-                    <img src="img/google-icon.svg" alt="Google" />
+                    <img src="https://www.svgrepo.com/download/475656/google-color.svg" alt="Google" />
                 </button>
             </div>
         </form>
     </div>
 
-    <script type="module" src="js/auth.js"></script>
-    <script>
-        if (typeof initLoginForm === 'function') {
-            initLoginForm();
-        } else if (window.initLoginForm) {
-            window.initLoginForm();
-        }
+    <script type="module">
+        import { initLoginForm } from './js/auth.js';
+        initLoginForm();
     </script>
 </body>
 

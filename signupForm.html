@@ -51,19 +51,15 @@
             <div class="social-row-k">
                 <!-- Google signup button -->
                 <button type="button" id="google-signup" class="social-btn-k google-btn-k" title="Sign up with Google">
-                    <img src="img/google-icon.svg" alt="Google" />
+                    <img src="https://www.svgrepo.com/download/475656/google-color.svg" alt="Google" />
                 </button>
             </div>
         </form>
     </div>
 
-    <script type="module" src="js/auth.js"></script>
-    <script>
-        if (typeof initSignupForm === 'function') {
-            initSignupForm();
-        } else if (window.initSignupForm) {
-            window.initSignupForm();
-        }
+    <script type="module">
+        import { initSignupForm } from './js/auth.js';
+        initSignupForm();
     </script>
 </body>
 
