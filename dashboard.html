@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Dashboard</title>
   <link rel="stylesheet" href="./css/dashboard.css" />
+  <!-- Firebase CDN scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js"></script>
+  <!-- End Firebase CDN scripts -->
 </head>
+
 <body>
   <h1>Product Dashboard</h1>
 
@@ -33,24 +41,25 @@
   </form>
 
 
-<table id="productsTable">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Color</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody id="productList">
-  </tbody>
-</table>
+  <table id="productsTable">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Color</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="productList">
+    </tbody>
+  </table>
 
   <div id="productList" class="productList"></div>
 
   <script type="module" src="./js/dashboard.js"></script>
 </body>
+
 </html>

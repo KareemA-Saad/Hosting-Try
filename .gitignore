@@ -41,3 +41,5 @@ out/
 *.swo
 .idea/
 *.bak
+# Local Netlify folder
+.netlify

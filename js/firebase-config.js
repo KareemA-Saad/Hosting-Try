@@ -1,9 +1,7 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+// Firebase App and services are loaded via CDN in index.html
+// This file initializes Firebase using the global firebase object
 
-const firebaseConfig = {
+window.firebaseConfig = {
   apiKey: "AIzaSyDOL8EAF_5kYHAom1fZ_7UiAxWcWIJ5Aok",
   authDomain: "pack-go-5d568.firebaseapp.com",
   projectId: "pack-go-5d568",
@@ -13,9 +11,7 @@ const firebaseConfig = {
   measurementId: "G-R9DE3EBPD2"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-const analytics = getAnalytics(app);
-
-export { app, db, auth, analytics };
+window.firebaseApp = firebase.initializeApp(window.firebaseConfig);
+window.db = firebase.firestore();
+window.auth = firebase.auth();
+window.analytics = firebase.analytics();
