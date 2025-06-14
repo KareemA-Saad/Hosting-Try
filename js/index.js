@@ -1,6 +1,5 @@
-const auth = window.auth;
-const onAuthStateChanged = firebase.auth().onAuthStateChanged.bind(firebase.auth());
-const signOut = firebase.auth().signOut.bind(firebase.auth());
+import { auth } from './firebase-config.js';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { userDataService, getCurrentUserUid } from './userDataService.js';
 
 const logoutBtn = document.getElementById('logout-btn');
@@ -28,7 +27,7 @@ if (logoutBtn) {
             }
 
             // Sign out
-            await signOut();
+            await signOut(auth);
             window.location.reload();
         } catch (error) {
             console.error('Error during logout:', error);

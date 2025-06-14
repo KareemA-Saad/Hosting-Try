@@ -1,12 +1,6 @@
-const auth = window.auth;
-const onAuthStateChanged = firebase.auth().onAuthStateChanged.bind(firebase.auth());
-const updateEmail = firebase.auth().updateEmail.bind(firebase.auth());
-const updatePassword = firebase.auth().updatePassword.bind(firebase.auth());
-const EmailAuthProvider = firebase.auth.EmailAuthProvider;
-const reauthenticateWithCredential = firebase.auth().reauthenticateWithCredential.bind(firebase.auth());
-const sendEmailVerification = firebase.auth().sendEmailVerification.bind(firebase.auth());
+import { auth } from './firebase-config.js';
+import { onAuthStateChanged, updateEmail, updatePassword, EmailAuthProvider, reauthenticateWithCredential, sendEmailVerification } from 'firebase/auth';
 import { userDataService } from './userDataService.js';
-
 
 const userUpdateForm = document.getElementById('user-update-form');
 const userEmailInput = document.getElementById('user-email');
@@ -18,7 +12,7 @@ const userDisplayName = document.getElementById('user-display-name');
 
 let currentUser = null;
 
-onAuthStateChanged(async (user) => {
+onAuthStateChanged(auth, async (user) => {
     if (user) {
         currentUser = user;
         console.log('Current User:', {
