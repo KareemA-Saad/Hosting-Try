@@ -10,7 +10,7 @@ if (categoryTitle && category) {
   categoryTitle.innerText = `منتجات: ${category}`;
 }
 
-export async function displayProductByCategory(db) {
+export async function displayProductByCategory() {
   if (!category) return;
 
   try {
@@ -21,7 +21,7 @@ export async function displayProductByCategory(db) {
     let container = document.getElementById("products-container");
     if (!container) return;
 
-    container.innerHTML = ""; 
+    container.innerHTML = "";
 
     if (querySnapshot.empty) {
       container.innerText = "لا توجد منتجات في هذه الفئة.";
@@ -120,5 +120,5 @@ function renderCartItems() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayProductByCategory(db);
+  displayProductByCategory();
 });

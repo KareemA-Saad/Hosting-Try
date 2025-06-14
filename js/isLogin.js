@@ -1,5 +1,6 @@
-const auth = window.auth;
-const onAuthStateChanged = firebase.auth().onAuthStateChanged.bind(firebase.auth());
+import { auth } from "./firebase-config.js";
+
+const onAuthStateChanged = auth.onAuthStateChanged.bind(auth);
 
 export function IsLogin(page) {
     return new Promise((resolve, reject) => {

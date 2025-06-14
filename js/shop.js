@@ -41,7 +41,7 @@ async function getProductsFromFireStore(loadFirstPage = true) {
         } else {
             productsQuery = query(targetProducts, startAfter(endOfProducts), limit(productsPerPage));
         }
-        
+
 
         let querySnapshot = await getDocs(productsQuery);
 
@@ -108,7 +108,7 @@ function appendProductCards(products) {
             }
         });
         categoryLink.innerText = getCurrentCategoryFilter();
-        categoryLink.setAttribute("data-category",getCurrentCategoryFilter());
+        categoryLink.setAttribute("data-category", getCurrentCategoryFilter());
         shopBody.appendChild(productCard);
     });
 }

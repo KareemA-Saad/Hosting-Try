@@ -1,11 +1,5 @@
-const auth = window.auth;
-const GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-const signInWithEmailAndPassword = firebase.auth().signInWithEmailAndPassword.bind(firebase.auth());
-const createUserWithEmailAndPassword = firebase.auth().createUserWithEmailAndPassword.bind(firebase.auth());
-const signInWithPopup = firebase.auth().signInWithPopup.bind(firebase.auth());
-const updateProfile = firebase.auth().updateProfile.bind(firebase.auth());
-const onAuthStateChanged = firebase.auth().onAuthStateChanged.bind(firebase.auth());
-const sendPasswordResetEmail = firebase.auth().sendPasswordResetEmail.bind(firebase.auth());
+import { auth } from "./firebase-config.js";
+import { GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, updateProfile, onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
 import { userDataService } from './userDataService.js';
 
 // UI Update
@@ -49,11 +43,11 @@ const handleEmailAuth = async (email, password, displayName, isSignUp = false) =
 
     try {
         const userCredential = isSignUp
-            ? await createUserWithEmailAndPassword(email, password)
-            : await signInWithEmailAndPassword(email, password);
+            ? await createUserWithEmailAndPassword(auth, email, password)
+            : await signInWithEmailAndPassword(auth, email, password);
 
         if (isSignUp) {
-            await updateProfile({ displayName });
+            await updateProfile(userCredential.user, { displayName });
             await userDataService.saveUserData(userCredential.user.uid, {
                 uid: userCredential.user.uid,
                 email: email,
@@ -72,7 +66,7 @@ const handleEmailAuth = async (email, password, displayName, isSignUp = false) =
 const handleGoogleAuth = async (isSignUp = false) => {
     const provider = new GoogleAuthProvider();
     try {
-        const result = await signInWithPopup(provider);
+        const result = await signInWithPopup(auth, provider);
         const existingUserData = await userDataService.getUserData(result.user.uid);
         const role = existingUserData?.role || "user";
 
@@ -128,7 +122,7 @@ export const initLoginForm = () => {
                 return;
             }
             try {
-                await sendPasswordResetEmail(email);
+                await sendPasswordResetEmail(auth, email);
                 alert("Password reset email sent! Check your inbox.");
             } catch (error) {
                 alert(error.message);

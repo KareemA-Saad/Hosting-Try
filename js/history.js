@@ -1,11 +1,8 @@
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
-import { app } from "./firebase-config.js";
-
-const db = getFirestore(app);
-const auth = window.auth;
-const tbody = document.getElementById("ordersTableBody");
+import { db, auth } from "./firebase-config.js";
 import { IsLogin } from './isLogin.js';
-const onAuthStateChanged = firebase.auth().onAuthStateChanged.bind(firebase.auth());
+const tbody = document.getElementById("ordersTableBody");
+const onAuthStateChanged = auth.onAuthStateChanged.bind(auth);
 
 document.addEventListener("DOMContentLoaded", () => {
     IsLogin()

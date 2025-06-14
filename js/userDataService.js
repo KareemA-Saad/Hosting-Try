@@ -32,8 +32,6 @@ class UserDataService {
         }
     }
 
-    
-
     async saveUserData(userId, userData) {
         if (!userId || !userData) {
             console.error('Missing userId or userData');
@@ -43,7 +41,7 @@ class UserDataService {
         try {
             const userRef = doc(db, 'users', userId);
             const existingData = await this.getUserData(userId);
-            
+
             const dataToSave = {
                 ...existingData,
                 ...userData,

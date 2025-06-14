@@ -21,8 +21,8 @@ async function getCartItemsFromFirestoreByUser(db, userId) {
 
     let cartItems = [];
     querySnapshot.forEach(document => {
-        cartItems.push({ 
-            firestoreId: document.id, 
+        cartItems.push({
+            firestoreId: document.id,
             ...document.data()
         });
     });
@@ -56,7 +56,7 @@ export async function initPayPal(db, userId) {
             height: 45
         },
         createOrder: async function (data, actions) {
-            
+
             let cartItemsCurrent = await getCartItemsFromFirestoreByUser(db, userId);
             if (cartItemsCurrent.length === 0) {
                 alert("Your cart is empty!");
@@ -77,9 +77,9 @@ export async function initPayPal(db, userId) {
         },
         onApprove: async function (data, actions) {
             return actions.order.capture().then(async function (details) {
-                
+
                 let cartItemsCurrent = await getCartItemsFromFirestoreByUser(db, userId);
-                let cartItemIds = cartItemsCurrent.map(item => item.firestoreId); 
+                let cartItemIds = cartItemsCurrent.map(item => item.firestoreId);
                 let valueShouldPay = await calculateTotalAmount(cartItemsCurrent);
                 let paidAmount = details.purchase_units[0].amount.value;
                 if (Number(paidAmount).toFixed(2) === valueShouldPay) {
@@ -106,7 +106,7 @@ export async function initPayPal(db, userId) {
                     };
                     try {
                         await addDoc(collection(db, "orders"), orderData);
-                        
+
                         for (let cartId of cartItemIds) {
                             await deleteDoc(doc(db, "carts", cartId));
                         }

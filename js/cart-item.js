@@ -1,8 +1,7 @@
 import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
-import { db, app } from "./firebase-config.js";
+import { db, auth } from "./firebase-config.js";
 
-const auth = window.auth;
-const onAuthStateChanged = firebase.auth().onAuthStateChanged.bind(firebase.auth());
+const onAuthStateChanged = auth.onAuthStateChanged.bind(auth);
 
 function updateCartCount() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];

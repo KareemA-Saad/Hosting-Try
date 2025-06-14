@@ -1,26 +1,21 @@
 import { doc, getDoc, addDoc, collection, query, where, getDocs, updateDoc } from "firebase/firestore";
-import { db, app } from "./firebase-config.js";
+import { db, auth } from "./firebase-config.js";
 import { updateCartCount, displayCartItems } from "./cart-item.js";
 
-const auth = window.auth;
-const onAuthStateChanged = window.firebase.auth().onAuthStateChanged.bind(window.firebase.auth());
+const onAuthStateChanged = auth.onAuthStateChanged.bind(auth);
 
 async function mergeCartWithFirestore(userId) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   for (let cartItem of cart) {
-
     cartItem.userId = userId;
-
     let q = query(
       collection(db, "carts"),
       where("userId", "==", userId),
       where("id", "==", cartItem.id),
       where("color", "==", cartItem.color)
     );
-
     let snapshot = await getDocs(q);
-
     if (!snapshot.empty) {
       let docRef = snapshot.docs[0].ref;
       let existing = snapshot.docs[0].data();
@@ -30,13 +25,9 @@ async function mergeCartWithFirestore(userId) {
       await addDoc(collection(db, "carts"), cartItem);
     }
   }
-
-
   localStorage.setItem("userId", userId);
   updateCartCount();
-
 }
-
 
 onAuthStateChanged(async (user) => {
   if (user) {
@@ -75,7 +66,6 @@ export async function getProductDetails(id, db) {
     console.error(error);
   }
   updateCartCount();
-
 }
 
 function displayProductDetails(product) {
@@ -144,7 +134,6 @@ function displayProductDetails(product) {
     window.location.href = "cart.html";
   });
   updateCartCount();
-
 }
 
 async function handleAddToCart(product) {
@@ -214,7 +203,6 @@ async function addOrUpdateCartItem(cartItem) {
     await addDoc(cartsRef, cartItem);
   }
   updateCartCount();
-
 }
 
 document.addEventListener("DOMContentLoaded", () => {
