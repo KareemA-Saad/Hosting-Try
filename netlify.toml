@@ -1,18 +1,9 @@
 [build]
   publish = "dist"
   command = "npm run build"
+
 [[redirects]]
   from = "/:page"
   to = "/:page.html"
   status = 200
   
-[[redirects]]
-  from = "/productdetails"
-  to = "/productdetails.html"
-  status = 200
-
-
-
-/productdetails    /productdetails.html  200 
-
-/:page        /:page.html   200   
