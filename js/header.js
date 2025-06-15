@@ -45,4 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//console.log('Header.js');
+console.log('Header.js');
