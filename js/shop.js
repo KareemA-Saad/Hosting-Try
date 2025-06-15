@@ -104,6 +104,7 @@ function appendProductCards(products) {
 
         productCard.addEventListener("click", (e) => {
             if (e.target.tagName !== 'button') {
+                  // console.log(`Redirecting to: productDetails.html?id=${product.id}`);
                 window.location.href = `productDetails.html?id=${product.id}`;
             }
         });
