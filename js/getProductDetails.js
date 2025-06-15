@@ -217,3 +217,5 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
   displayCartItems();
 });
+
+console.log('getProductDetails.js');
